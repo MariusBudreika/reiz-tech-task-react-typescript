@@ -1,23 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "../Container/Container";
 import styles from "./top.module.scss";
+import { Country } from "../../App";
 
 interface TopProps {
-  countries: any[];
-  filteredAndSortedCountries: any[];
+  countries: Country[];
   setFilteredAndSortedCountries: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
 const Top: React.FC<TopProps> = ({
   countries,
-  filteredAndSortedCountries,
   setFilteredAndSortedCountries,
 }) => {
   const [filter, setFilter] = useState("all");
   const [sortOrder, setSortOrder] = useState("asc");
 
-  React.useEffect(() => {
-    setFilteredAndSortedCountries((prevCountries) => {
+  useEffect(() => {
+    setFilteredAndSortedCountries(() => {
       let filteredCountries = [...countries];
 
       switch (filter) {
@@ -25,7 +24,7 @@ const Top: React.FC<TopProps> = ({
           break;
         case "smaller":
           filteredCountries = filteredCountries.filter((country) => {
-            return country.area && country.area < 65300;
+            return country.area < 65300;
           });
           break;
         case "oceania":
@@ -47,7 +46,7 @@ const Top: React.FC<TopProps> = ({
 
       return filteredCountries;
     });
-  }, [countries, filter, sortOrder]);
+  }, [countries, filter, sortOrder, setFilteredAndSortedCountries]);
 
   return (
     <Container>
