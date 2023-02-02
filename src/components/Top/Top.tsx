@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Container from "../Container/Container";
+import styles from "./top.module.scss";
 
 interface TopProps {
   countries: any[];
@@ -52,19 +53,34 @@ const Top: React.FC<TopProps> = ({
     <Container>
       <div>
         <div>
-          <h2>Countries</h2>
           <label>
-            Filter by:
-            <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-              <option value="all">All Countries</option>
-              <option value="smaller">Smaller Than Lithuania</option>
-              <option value="oceania">Oceania</option>
+            <select
+              className={styles.topSelect}
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+            >
+              <option className={styles.topOption} value="all">
+                All Countries
+              </option>
+              <option className={styles.topOption} value="smaller">
+                Smaller Than Lithuania
+              </option>
+              <option className={styles.topOption} value="oceania">
+                Oceania
+              </option>
             </select>
           </label>
         </div>
         <div>
-          <button onClick={() => setSortOrder("asc")}>Sort A-Z</button>
-          <button onClick={() => setSortOrder("desc")}>Sort Z-A</button>
+          <button className={styles.topBtn} onClick={() => setSortOrder("asc")}>
+            Sort A-Z
+          </button>
+          <button
+            className={styles.topBtn}
+            onClick={() => setSortOrder("desc")}
+          >
+            Sort Z-A
+          </button>
         </div>
       </div>
     </Container>

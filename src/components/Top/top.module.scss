@@ -1,0 +1,31 @@
+.top {
+  &Select {
+    border-style: none;
+    min-width: 15rem;
+    height: 1.8rem;
+    border-radius: 5px;
+    background-color: #74c69d;
+    border: 0.2;
+  }
+
+  &Option {
+    background-color: #74c69d;
+  }
+
+  &Btn {
+    cursor: pointer;
+    border-style: none;
+    border-radius: 10px;
+    margin: 1rem 1rem 0.5rem 0;
+    padding: 0.35rem;
+    background-color: #74c69d;
+  }
+  &Btn:hover {
+    background-color: #52b788;
+  }
+
+  &Btn:active {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, 0.4);
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Country } from "../../App";
+import Container from "../Container/Container";
 import SingleCountry from "../SingleCountry/SingleCountry";
 
 interface Props {
@@ -8,13 +9,13 @@ interface Props {
 
 const CountriesList: React.FC<Props> = ({ countries }) => {
   return (
-    <div>
+    <Container>
       <ul>
         {countries.map((country) => (
           <SingleCountry key={country.name} country={country} />
         ))}
       </ul>
-    </div>
+    </Container>
   );
 };
 
