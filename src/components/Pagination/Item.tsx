@@ -1,12 +1,12 @@
 import React from "react";
 import { Country } from "../../App";
-import styles from "./singleCountry.module.scss";
+import styles from "./item.module.scss";
 
 interface Props {
   country: Country;
 }
 
-const SingleCountry: React.FC<Props> = ({ country }) => {
+const Item: React.FC<Props> = ({ country }) => {
   return (
     <li className={styles.list} key={country.name}>
       <p>Name: {country.name}</p>
@@ -16,4 +16,4 @@ const SingleCountry: React.FC<Props> = ({ country }) => {
   );
 };
 
-export default SingleCountry;
+export default Item;
