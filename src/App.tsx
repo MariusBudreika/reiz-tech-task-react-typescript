@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CountriesList from "./components/CountriesList/CountriesList";
+import Pagination from "./components/Pagination/Pagination";
 import Top from "./components/Top/Top";
 
 export interface Country {
@@ -26,7 +26,7 @@ const App: React.FC = () => {
         countries={countries}
         setFilteredAndSortedCountries={setFilteredAndSortedCountries}
       />
-      <CountriesList countries={filteredAndSortedCountries} />
+      <Pagination countries={filteredAndSortedCountries} />
     </>
   );
 };
